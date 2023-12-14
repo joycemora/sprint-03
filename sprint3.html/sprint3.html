@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+
+function mostra(conteudo) {
+
+  documento.write(conteudo)
+  
+}
+  
+
+function mostraH3(conteudo) {
+            document.write("<h3>" + conteudo + "</h3>");
+        }
+
+function traço() {
+  document.write ("<br>")
+
+  
+}
+function pulalinha() {
+
+  document.write ("<br>")
+
+}
+
+function pulalinha2() {
+
+document.write ("<br>")
+document.write ("<br>")
+
+}
+function Cabecalho() {
+            mostra("<h1>>>COMEX<<</h1>");
+            mostra("<h2>:: Lista de Clientes</h2>");
+            traço();
+        }
+        function CalcularEtaria(idade) {
+            if (idade <= 17) {
+                return ("ADOLESCENTE");
+            }
+
+            else if (idade >= 18 && idade <= 29) {
+                return ("JOVEM");
+            }
+
+            else if (idade >= 30 && idade <= 59) {
+                return ("ADULTO");
+            }
+            else if (idade >= 60) {
+                return ("IDOSO");
+            }
+        }
+        
+        let anoAtual = prompt("Digite o ano atual:");
+
+        function testeDeIntegridade() {
+            let testeIntegridade = 0;
+            while (testeIntegridade <= 0) {
+                if (anoAtual > 0) {
+                    testeIntegridade++;
+                } else {
+                    alert("ERRO, valor informado não é válido!");
+                    anoAtual = prompt("Favor informar o ano atual corretamente!");
+                }
+            }
+        }
+
+        var CodAtual = 1;
+        function testeForClientes() {
+            var idadeCliente = 0;
+            for (ClienteAtual = 0; ClienteAtual < QuantClientes; ClienteAtual++) {
+                mostraH3("- Código: " + CodAtual);
+                PulaLinha();
+                var nomeCliente = prompt("Digite o nome do Cliente " + CodAtual + ": ");
+                mostra("Nome: " + nomeCliente);
+                PulaLinha2();
+                CodAtual++;
+                var MesCliente = prompt("Informe o mês de nascimento do cliente.");
+                mostra("Mês de nascimento: " + MesCliente);
+                PulaLinha2();
+                var AnoCliente = parseInt(prompt("Informe o ano de nascimento do cliente."));
+
+                let testeIntegridadeAnoCliente = 0;
+                while (testeIntegridadeAnoCliente <= 0) {
+                    if (AnoCliente > 0) {
+                        testeIntegridadeAnoCliente++;
+                    } else {
+                        alert("ERRO, valor informado não é válido!");
+                        AnoCliente = prompt("Favor informar um ano de nascimento válido!");
+                    }
+                }
+
+                mostra("Ano de nascimento: " + AnoCliente);
+                PulaLinha2();
+                traço();
+                idadeCliente += anoAtual - AnoCliente;
+            }
+
+            mostra("*** Estatística ***");
+            PulaLinha2();
+            mostra("Soma das idades: " + idadeCliente);
+            PulaLinha2();
+            mostra("Média arredondada das idades: " + Math.round(idadeCliente / QuantClientes));
+        }
+
+        function Rodape() {
+            traço();
+            mostra(".:: Alura LEVEL UP ::.");
+        }
+
+
+        testeDeIntegridade();
+        var QuantClientes = prompt("Informe o numero de clientes:");
+        Cabecalho();
+        testeForClientes();
+        Rodape();
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
